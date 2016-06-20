@@ -1,8 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 
-import { Hero } from './hero';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroService } from './hero.service';
+import { Hero } from './../hero';
+import HeroDetail from './HeroDetail';
+import { HeroService } from './../service/hero.service';
 
 @Component({
     selector: 'my-heroes',
@@ -66,17 +66,17 @@ import { HeroService } from './hero.service';
       border-radius: 4px 0 0 4px;
     }
   `],
-    directives: [HeroDetailComponent],
+    directives: [HeroDetail],
     providers: []
 })
-export class HeroesComponent implements OnInit {
+export default class HeroesComponent implements OnInit {
 
     constructor(private heroService: HeroService) { };
 
     ngOnInit() {
         this.getHeroes();
-        console.log('module.id = ', module.id);
-        console.dir(module);
+        //console.log('module.id = ', module.id);
+        //console.dir(module);
     };
 
     title = 'Tour of Heroes';
