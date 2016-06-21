@@ -5,3 +5,4 @@ typings
 *.js.map
 !systemjs.config.js
 !jasmine-boot.js
+!my-bs-config.js
