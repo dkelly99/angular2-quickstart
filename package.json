@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "lite": "lite-server",
+    "lite": "lite-server -c my-bs-config.js",
     "test": "node node_modules/jasmine/bin/jasmine",
-    "postinstall": "typings install",
+    "postinstall": "typings -- install dt~jasmine --save --global",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings"

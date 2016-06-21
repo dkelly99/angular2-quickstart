@@ -13,7 +13,7 @@ import { Hero } from './../hero';
     </div>
   `
 })
-export default class {
+export default class HeroDetail{
     @Input()
     hero: Hero;
 }

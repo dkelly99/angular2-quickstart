@@ -69,10 +69,15 @@ import { HeroService } from './../service/hero.service';
     directives: [HeroDetail],
     providers: []
 })
-export default class HeroesComponent implements OnInit {
+export default class Heroes implements OnInit {
 
-    constructor(private heroService: HeroService) { };
+    constructor(private heroService: HeroService) {
+        console.log('go');
+    };
 
+    ngOnDestroy(){
+        console.log('destroy');
+    }
     ngOnInit() {
         this.getHeroes();
         //console.log('module.id = ', module.id);

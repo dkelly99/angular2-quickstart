@@ -142,15 +142,6 @@
         env.execute();
     };*/
 
-    var ConsoleReporter = jasmineRequire.ConsoleReporter();
-    var options = {
-        timer: new jasmine.Timer,
-        print: function () {
-            console.log.apply(console,arguments)
-        }};
-    var consoleReporter = new ConsoleReporter(options); // initialize ConsoleReporter
-    env.addReporter(consoleReporter); //add reporter to execution environment
-
     jasmine.go = function() {
         htmlReporter.initialize();
         env.execute();
