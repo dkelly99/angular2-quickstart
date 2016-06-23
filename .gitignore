@@ -7,5 +7,4 @@ typings
 *.js.map
 !Gruntfile.js
 !src/systemjs.config.js
-!spec/jasmine-boot.js
-!my-bs-config.js
+!test/jasmine-boot.js

@@ -5,7 +5,7 @@
     "dev": "npm install -g grunt-cli && npm install -g bower",
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
-    "test": "node spec/jasmine-node",
+    "test": "node test/jasmine-node",
     "postinstall": "typings install dt~jasmine --save --global",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
