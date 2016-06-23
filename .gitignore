@@ -1,8 +1,11 @@
 .idea
+bower_components
 node_modules
+src/resources
 typings
 *.js
 *.js.map
-!systemjs.config.js
-!jasmine-boot.js
+!Gruntfile.js
+!src/systemjs.config.js
+!spec/jasmine-boot.js
 !my-bs-config.js

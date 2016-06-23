@@ -1,0 +1,12 @@
+{
+  "name": "angular2-quickstart",
+  "authors": [
+    "Declan Kelly <declan.kelly@btinternet.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jsHeader/angular2-quickstart",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

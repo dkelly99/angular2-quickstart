@@ -1,3 +1,7 @@
 {
-  "port": 3005
+  "port": 3005,
+  "server": {
+      "baseDir": ["./", "./src"],
+      "index": "index.html"
+  }
 }

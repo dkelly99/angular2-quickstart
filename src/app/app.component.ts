@@ -1,5 +1,3 @@
-//console.log(module.id);
-
 import { Component }       from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { HeroService }     from './service/hero.service';
@@ -7,6 +5,7 @@ import Heroes from './component/heroes.component';
 import DashboardComponent from './component/Dashboard';
 
 @Component({
+    moduleId: module.id,
     selector: 'my-app',
     template: `
   <h1>{{title}}</h1>
