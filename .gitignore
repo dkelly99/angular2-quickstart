@@ -1,6 +1,7 @@
 .idea
 bower_components
 node_modules
+npm-debug.log
 src/resources
 typings
 *.js
