@@ -71,9 +71,7 @@ import { HeroService } from '../service/hero.service';
 })
 export default class Heroes implements OnInit {
 
-    constructor(private heroService: HeroService) {
-        console.log('go');
-    };
+    constructor(private heroService: HeroService) {};
 
     ngOnDestroy(){
         console.log('destroy');

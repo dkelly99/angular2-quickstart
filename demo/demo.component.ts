@@ -1,6 +1,5 @@
 import {Component, ViewChild, ViewContainerRef, ComponentResolver} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
-//import DashboardComponent from '../src/app/component/Dashboard';
 
 @Component({
     selector: 'my-demo',
@@ -15,16 +14,19 @@ export class DemoComponent {
     ){}
 
     ngAfterViewInit(){
-        const url = 'app/component/Dashboard.demo';
+        const qs = window.location.href.split('?')[1];
+        const url = qs + '.demo';
 
         const importer = url => Observable.fromPromise(SystemJS.import(url));
-        const resolve = comp => Observable.fromPromise(this.compResolver.resolveComponent(comp));
+        const resolve = myModule => Observable.fromPromise(this.compResolver.resolveComponent(myModule.Demo));
 
         importer(url)
-            .switchMap(comp => resolve(comp.Demo))
+            .switchMap(myModule => resolve(myModule))
             .subscribe(factory => {
                 const comp = this.attachPoint.createComponent(factory).instance;
                 //comp.someProp = "Show me how this works...";
+            }, () => {
+                this.attachPoint.element.nativeElement.innerHTML = 'Demo not found: [' + qs + ']';
             })
     }
 }
