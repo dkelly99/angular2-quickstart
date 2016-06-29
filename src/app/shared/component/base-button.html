@@ -1,1 +1,1 @@
-<button class="btn btn-default" type="submit">Button</button>
+<button (click)="onClick()" class="btn btn-{{context}}" [disabled]="isDisabled ? 'disabled' : ''">{{label}}</button>
