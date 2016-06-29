@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 type Context = 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'link';
+type Size = 'default' | 'sm' | 'xs' | 'lg';
 
 @Component({
     moduleId: module.id,
@@ -9,13 +10,13 @@ type Context = 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger'
     styleUrls: ['base-button.css']
 })
 export class BaseButtonComponent implements OnInit {
-    
+
     @Input()context: Context = 'default';
     @Input()label: String = '';
     @Input()value: String = '';
-    @Input()size: String = '';
-    @Input()active: Boolean = true;
+    @Input()size: Size = 'default';
     @Input()isDisabled: Boolean = false;
+    @Input()isBlock: Boolean = false;
 
     @Output()
     buttonClick = new EventEmitter<BaseButtonComponent>();
@@ -23,6 +24,10 @@ export class BaseButtonComponent implements OnInit {
     onClick(event) {
         event.preventDefault();
         this.buttonClick.emit(this);
+    }
+
+    getSizeClassName () {
+        return this.size === 'default' ? '' : 'btn-' + this.size;
     }
 
     constructor() {}
