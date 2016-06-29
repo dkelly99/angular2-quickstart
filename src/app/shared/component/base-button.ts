@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
-type Context = "default" | "primary";
+type Context = 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'link';
 
 @Component({
     moduleId: module.id,
@@ -20,7 +20,8 @@ export class BaseButtonComponent implements OnInit {
     @Output()
     buttonClick = new EventEmitter<BaseButtonComponent>();
 
-    onClick() {
+    onClick(event) {
+        event.preventDefault();
         this.buttonClick.emit(this);
     }
 
